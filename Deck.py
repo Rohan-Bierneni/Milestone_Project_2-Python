@@ -7,10 +7,16 @@ value = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
 class MyDeck:
     def __init__(self):
         self.cards = []
+        self.create_new_deck()
+        self.shuffle()
+
+    def shuffle(self):
+        shuffle(self.cards)
+
+    def create_new_deck(self):
         for suit in suits:
             for y in value:
                 self.cards.append((suit, y))
 
-    def shuffle(self):
-        shuffle(self.cards)
-        print(self.cards)
+    def deal_card(self):
+        return self.cards.pop(0)
